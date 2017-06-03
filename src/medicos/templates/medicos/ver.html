@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Ver enfermedades{% endblock title %}
+
+{% block content %}
+
+<h2 style="font-size: x-large;" > Enfermedades registradras </h2>
+<br>
+<br>
+<br>
+<h4> Aquí se mostrarán todas las enfermedades que se han registrado en la base de datos de nuestro servicio de salud</h4>
+	<div id="content">
+        <div class="content_item">
+            <b>Numero total de enfermos: {{ nEnf }}<b><br><br>
+			{% for e in enfermos %}
+                <a href="{% url 'medicos.enfermo' e.id %}">{{ e.Reporte_Enfermedad }}, {{ e.nombre }} - {{ e.pais }} </a> <br><br>
+            {% endfor %}
+		</div>
+      </div>
+{% endblock content %}

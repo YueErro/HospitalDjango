@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+<div>
+	<div>
+	<h2 style="font-size: x-large;" >Login</h2>
+		<div>
+		{% if mensaje %} 
+			{{ mensaje }}
+		</div>
+		{% endif %}
+		<br>
+		<div>		
+		<form method="POST" action="" enctype="mutilpart/form-data">
+			{% include "cuentas/snippets.html" %}
+			<div>
+				<label>Nombre de usuario</label> <br>
+				<input type="text" name="username" id="username" value="{{ username }}">
+			</div><br>
+			<div>
+				<label>Contraseña</label><br>
+				<input type="password" name="password" id="password">
+			</div><br>
+			<button type="submit"> Login </button>
+		</form>
+	</div><br><br>
+</div>		
+{% endblock content %}
+

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Ver enfermedad{% endblock title %}
+
+{% block content %}
+
+<h2 style="font-size: x-large;" > Datos de la persona enferma </h2>
+<br>
+<br>
+	<div id="content">
+        <div class="content_item">
+            <br>
+            {% for e in enfermo %}
+                <b>Nombre del paciente:</b><br> {{ e.nombre }} <br><br>
+                <b>Sexo del paciente:</b><br> {{ e.sexo}} <br><br>
+     			<b>Edad del paciente:</b><br> {{ e.edad }} <br><br>
+                <b>Ciudad del paciente:</b><br> {{ e.ciudad }} <br><br>
+                <b>Días enfermo:</b><br> {{ e.Dias_enfermo }} <br><br>
+                <b>Domicilio del paciente:</b><br> {{ e.domicilio }} <br><br>
+                <b>Área médica de la enfermedad:</b><br> {{ e.Area_Medica }} <br><br>
+				<b>Foto:</b><br> <img src="{{ e.Foto }}" width="30%"/> <br><br>
+                <b>Comentarios:</b><br> {{ e.Comentarios }}<br><br>
+				<b>Tratamiento:</b><br> {{ e.Respuesta }}<br>
+			<form method="POST" action="" enctype="mutilpart/form-data">	
+			{% include "cuentas/snippets.html" %}
+			<b>Subir informe:</b><br>
+				<input name="adjuntar" type="file" id="adjuntar" size="12" multiple required>
+				<button type="submit"> Adjuntar </button>
+			</form>
+			<form method="POST" action="" enctype="mutilpart/form-data">	
+			{% include "cuentas/snippets.html" %}
+			<b>Tratamiento a seguir:</b><br>
+				<textarea name="respuesta" id="respuesta" rows="5" cols="50" required></textarea><br>
+				<button type="submit"> Enviar </button>
+			</form>
+			{% endfor %}
+		</div><br>
+      </div>
+{% endblock content %}

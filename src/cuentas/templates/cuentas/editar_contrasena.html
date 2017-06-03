@@ -1,0 +1,15 @@
+{% extends 'cuentas/base_cuentas.html' %}
+
+{% block title %}Editar email{% endblock title %}
+
+{% block cuentas %}
+    <h2 style="font-size: x-large;" >Editar contraseña</h2>
+    <br>
+
+    <form method="post" action="">
+        {% include "cuentas/snippets.html" %}
+        <button type="submit">Actualizar contraseña</button>
+		<br>
+		<br>
+    </form>
+{% endblock cuentas %}

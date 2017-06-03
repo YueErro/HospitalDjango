@@ -1,0 +1,8 @@
+{% csrf_token %} <br>
+	{% for field in form %} <br>
+	<div class="field_container">
+		{{ field.errors }}
+		{{ field.label_tag }} <br>
+		{{ field }}
+	</div>
+{% endfor %} <br>

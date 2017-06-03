@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock title %}</title>
+	<link rel='stylesheet' href="{% static 'css/main.css' %}" >
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+<div id="main_container">
+  <div class="header">
+      <div id="menu">
+        <ul>
+		  {% if user.is_authenticated %}
+			<li><a href="{% url 'cuentas.index' %}">{{ user.username }}</a></li>
+			<li><a href="{% url 'medicos.ver' %}">Pacientes</a></li>
+			<li><a href="{% url 'pacientes.registro' %}">Registrar</a></li>
+			<li><a href="{% url 'cuentas.logout' %}">Salir</a></li>
+		  {% else %}
+			<li><a href="{% url 'cuentas.registro' %}">Registro</a></li>
+			<li><a href="{% url 'cuentas.login' %}">Login</a></li>
+			<li><a href="{% url 'home.contacto' %}">Contactar</a></li>
+		  {% endif %}
+		</ul>
+      </div>
+    </div>
+  </div>
+    <div id="middle_box">
+    <div class="middle_box_content"></div>
+  </div>
+  <div id="main_content">
+    <div id="principal">
+	{% include '_messages.html' %}
+	{% block content %}{% endblock content %}
+	</div>
+  </div>
+</div>
+</body>
+</html>

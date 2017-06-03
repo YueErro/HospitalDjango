@@ -1,0 +1,14 @@
+{% extends 'cuentas/base_cuentas.html' %}
+
+
+{% block title %}Perfil de usuario{% endblock title %}
+
+{% block cuentas %}
+<div><h2 style="font-size: x-large;" >Perfil de usuario</h2></div><br><br><br>
+	{% for pac in res %}
+		{% if pac.Respuesta != '' %}
+			<b>Tienes una respuesta de tu médico, {{ pac.nombre }}:</b><br> {{ pac.Respuesta }} <br><br>
+		{% endif %}
+	{% endfor %}
+	<br><h3>Bienvenido/a {{ user.username }} </h3><br>
+{% endblock cuentas %}

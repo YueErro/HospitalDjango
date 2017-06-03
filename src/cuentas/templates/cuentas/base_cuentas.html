@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div>
+	<a class="edicion" href="{% url 'cuentas.editar_email' %}"> Editar email </a>
+	<a class="edicion"> | </a>
+	<a class="edicion" href="{% url 'cuentas.editar_contrasena' %}"> Editar contraseña</a>
+	</div>
+	
+	<div>
+	{% block cuentas %}{% endblock cuentas %}
+	</div>
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %} home {% endblock title %}
+  
+{% block content %} 
+        <h2 style="font-size: x-large;" >Contacta con Servicio Salud</h2><br>
+        <section>
+            <form method="GET" action="{% url 'cuentas.index' %}">
+                <br><br>
+                <table>
+                    <tr> <h1 style="color:black">Motivo de consulta <span style="color: red">*</span> </h1> </tr>
+
+                    <tr><select required>
+						<option value="Info" disabled selected hidden>Seleccione una opción</option>
+                        <option value="Info"> Infomación adicional </option>
+                        <option value="Info"> Errores </option>
+						<option value="Info"> Mejoras </option>
+                        <option value="Info"> Dudas generales </option>
+                        <option value="Info"> Otros </option>
+                    </select> </tr>
+                    <br>
+                    <br>
+
+                    <tr> <h1 style="color:black">Correo electrónico <span style="color: red">*</span></h1></tr>
+
+                    <tr> <input type="email" placeholder="contacto@hsp.com" required>  </tr>
+                    <br>
+                    <br>
+                    <tr> <h1 style="color:black">Nombre <span style="color: red">*</span></h1></tr>
+
+                    <tr> <input type="text" placeholder="Yue" required>  </tr>
+                    <br>
+                    <br>
+                    <tr> <h1 style="color:black">Comentario <span style="color: red">*</span></h1></tr>
+
+                    <textarea id="area" rows="4" cols="50" placeholder="Introduzca aquí su comentario" required></textarea>
+                </table>
+                <div id="izqq">
+                    <input class="boton" type="submit" value="Enviar">
+                    <input class="boton" style="margin-left: 20px" type="reset" value="Borrar">
+                </div>
+            </form>
+        </section>
+        <div class="footer-container">
+            <footer class="container">
+                <script>
+                    function atras() {
+                        window.history.back();
+                    }
+                </script>
+
+                <h2><a class="button alt" href="{% url 'home' %}">Volver al inicio</a></h2>
+                <br>
+            </footer>
+			<br><br>
+                <p style="float: right">Copyright © 6 de junio de 2017  &#8226  Sistemas Web  &#8226  Yue Erro e Itziar Egiluz</p>
+			<br>
+        </div>
+{% endblock content %}  
